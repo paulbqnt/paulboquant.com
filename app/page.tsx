@@ -1,13 +1,15 @@
 import styles from "./page.module.css";
+import Footer from "@/components/Footer";
+import Text from "@/components/Text";
+
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        hello
+    <div>
+      <main>
+          <Text>Hello</Text>
       </main>
-      <footer className={styles.footer}>
-      </footer>
     </div>
+
   );
 }

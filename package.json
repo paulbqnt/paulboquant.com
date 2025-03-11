@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/core": "^7.17.1",
     "@mdx-js/loader": "^3.1.0",
     "@next/mdx": "^15.2.2",
+    "@tabler/icons-react": "^3.31.0",
     "mdx": "^0.3.1",
     "next": "15.2.2",
     "prismjs": "^1.30.0",
