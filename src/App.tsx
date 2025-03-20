@@ -1,8 +1,11 @@
 import React from 'react';
 import { RouterProvider, createRouter, createRoute, createRootRoute } from '@tanstack/react-router';
 import Layout from './components/Layout';
+
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Uses from "./pages/Uses";
+
 import BlogPost from "./components/blog/BlogPost";
 import BlogList from "./components/blog/BlogList";
 import Projects from "./pages/Projects.tsx";
@@ -25,6 +28,13 @@ const aboutRoute = createRoute({
     component: About,
 });
 
+const usesRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/uses",
+    component: Uses,
+});
+
+
 const projectsRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/projects",
@@ -46,7 +56,7 @@ const blogPostRoute = createRoute({
 
 // Create router with all routes
 const router = createRouter({
-    routeTree: rootRoute.addChildren([homeRoute, aboutRoute, blogListRoute, blogPostRoute, projectsRoute]),
+    routeTree: rootRoute.addChildren([homeRoute, aboutRoute, blogListRoute, blogPostRoute, projectsRoute, usesRoute]),
     defaultPreload: "intent",
     notFoundComponent: () => <div>Custom Not Found Component</div>,
 });
