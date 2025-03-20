@@ -1,0 +1,82 @@
+# Hiram, Option Pricing Library
+
+
+Hiram is a free financial library built in Python that can be used for option pricing and financial instruments management.
+
+I started to think about this project while I was studying Option Pricing at University Panthéon-Sorbonne. I quickly realised how difficult it could be to improve intuition regarding pricing and greeks. My goal with Hiram is to:
+
+    Improve my intuition about options and greeks
+    Show how easy to use Python is
+    Show far I could go in the modeling of financial products.
+
+The code below is the first showcase of my library. You can find the Jupyter Notebook on github. Before the creation of that blog post I shared the notebook on LinkedIn.
+Table of contents
+
+    Option Creation and Pricing
+    Greeks
+    Stock Creation
+    Portfolio Creation
+    Portfolio Greeks
+    Delta Hedging of the Portfolio
+    Market Maker Example
+    Delta Hedging
+
+1. Option Creation and Pricing
+
+from option import BlackScholes, Way_option
+example_call = BlackScholes(way=Way_option.call, S=100, K=105, T=1, r=0.05, sigma=0.3, )
+example_call.dict() #Pydantic BaseModel function, makes the output easier to read
+
+# Output
+```json
+{'S': 100.0,
+'K': 105.0,
+'T': 1.0,
+'r': 0.05,
+'sigma': 0.3,
+'way': <Way_option.call: 'call'>,
+'stock': None,
+'quantity': 1,
+'price': 1,
+'id_': UUID('ad45fecd-e22c-4071-9e28-64799e7fbf78')}
+```
+=
+2. Greeks
+Delta
+$$Δ=∂V∂SΔ=∂S∂V​$$
+
+Delta 0.53 or 53%. For 1€ rise (fall) in the spot price the value of the long call position will increase (decrease) by about 0.53€. S (spot) and V (option value) move in the same direction.
+
+example_call.delta()
+
+# Output
+0.5338376178017635
+
+```python
+ways = [Way_option.call, Way_option.put]
+example_port2 = Portfolio()
+
+# let's write and add 100 options in our portfolio
+for i in range(0,100):
+    temp_stock = choice(stocks_list)
+    temp_option = BlackScholes(way=choice(ways),
+                      S = uniform(temp_stock.price * 0.5,temp_stock.price * 1.5),
+                      K = uniform(temp_stock.price * 0.5,temp_stock.price * 1.5),
+                      T = uniform(0.02, 3.0),
+                      r = uniform(0.01, 0.15),
+                      sigma = uniform(0.1, 0.75),
+                      quantity = uniform(1, 2000),
+                      price = uniform(10, 150),
+                     stock = temp_stock)
+    example_port2.add_underlying(temp_option)
+```
+
+
+
+Gamma
+Γ=∂Δ∂S=∂2V∂S2Γ=∂S∂Δ​=∂S2∂2V​
+
+example_call.gamma()
+
+# Output
+0.013141252320879648

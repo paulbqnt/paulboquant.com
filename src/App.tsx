@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouterProvider, createRouter, createRoute, createRootRoute } from '@tanstack/react-router';
-
-import Layout from './components/Layout';
+import 'katex/dist/katex.min.css';
+import Layout from './components/layouts/Layout.tsx';
 import BlogPost from "./components/blog/BlogPost";
 import BlogList from "./components/blog/BlogList";
 

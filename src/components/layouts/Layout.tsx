@@ -1,8 +1,9 @@
 import { AppShell } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Outlet } from "@tanstack/react-router";
-import AppHeader from "./Header/AppHeader.tsx";
-import AppFooter from "./Footer/AppFooter.tsx";
+import AppHeader from "../Header/AppHeader.tsx";
+import AppFooter from "../Footer/AppFooter.tsx";
+
 
 function Layout() {
     const [opened, { toggle }] = useDisclosure();
