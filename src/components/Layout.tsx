@@ -1,23 +1,21 @@
-import {AppShell, Burger} from "@mantine/core";
-import { useDisclosure } from '@mantine/hooks';
+import { AppShell } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import { Outlet } from "@tanstack/react-router";
 import AppHeader from "./Header/AppHeader.tsx";
 import AppFooter from "./Footer/AppFooter.tsx";
 
 function Layout() {
-    const [opened, { toggle }] = useDisclosure();;
+    const [opened, { toggle }] = useDisclosure();
+
     return (
         <AppShell
-            padding="md"
+            padding="0"  // Change from "md" to "0"
             header={{ height: 60 }}
-            navbar={{ width: 250, breakpoint: "sm", collapsed: { mobile: true } }}
             styles={(theme) => ({
                 main: {
-                    height: "100vh", // Ensure full height
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    backgroundColor: theme.colors.dark[0],
+                    color: theme.colors.text[0],
+                    minHeight: "100vh",
                 },
             })}
         >
@@ -25,7 +23,7 @@ function Layout() {
                 <AppHeader />
             </AppShell.Header>
 
-            <AppShell.Main>
+            <AppShell.Main style={{ display: 'flex', flexDirection: 'column' }}>
                 <Outlet />
             </AppShell.Main>
 

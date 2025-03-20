@@ -11,6 +11,9 @@ import Uses from "./pages/Uses";
 import Projects from "./pages/Projects";
 import Project1 from "./pages/projects/Project1";
 import Project2 from "./pages/projects/Project2";
+import Contact from "./pages/Contact.tsx";
+import Learn from "./pages/Learn.tsx";
+import Snippets from "./pages/Snippets.tsx";
 
 // Root route uses Layout component
 const rootRoute = createRootRoute({
@@ -34,6 +37,24 @@ const usesRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/uses",
     component: Uses,
+});
+
+const learnRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/learn",
+    component: Learn,
+});
+
+const snippetsRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/snippets",
+    component: Snippets,
+});
+
+const contactRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/contact",
+    component: Contact,
 });
 
 
@@ -80,7 +101,10 @@ const router = createRouter({
         projectsRoute,
         usesRoute,
         project1Route,
-        project2Route
+        project2Route,
+        contactRoute,
+        learnRoute,
+        snippetsRoute
     ]),
     defaultPreload: "intent",
     notFoundComponent: () => <div>Custom Not Found Component</div>,

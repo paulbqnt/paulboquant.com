@@ -3,11 +3,19 @@ import { Container, Text } from '@mantine/core';
 
 const About = () => {
     return (
-        <Container>
+        // TODO: add 4 tabs: INTRO/Resume/Career/Education
+            <Container>
 
-            <h2>About Page</h2>
+                <h2>About</h2>
 
-        </Container>
+                <h4>Intro</h4>
+                <h4>Resume</h4>
+                <h4>Career</h4>
+                <h4>Education</h4>
+
+
+
+            </Container>
     );
 };
 

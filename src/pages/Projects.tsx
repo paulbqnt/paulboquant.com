@@ -10,6 +10,7 @@ const Projects = () => {
 
             <h3>Project 1</h3>
             <Link to="/projects/project1" style={{ textDecoration: 'none' }}>link</Link>
+
             <h3>Project 2</h3>
             <Link to="/projects/project2" style={{ textDecoration: 'none' }}>link</Link>
 
