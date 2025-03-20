@@ -1,0 +1,44 @@
+.Container {
+    position: fixed; /* Fix the header at the top */
+    top: 0; /* Position at the top of the viewport */
+    left: 0;
+    width: 100%; /* Full width */
+    height: 56px;
+    background-color: var(--mantine-primary-color-9);
+    padding-left: var(--mantine-spacing-md);
+    padding-right: var(--mantine-spacing-md);
+    display: flex; /* Ensure the header itself is a flex container */
+    align-items: center; /* Vertically center items within the header */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.links-container {
+    display: flex;
+    gap: 10px;
+}
+
+.link {
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: var(--mantine-radius-sm);
+    text-decoration: none;
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+    font-size: var(--mantine-font-size-sm);
+    font-weight: 500;
+}
+
+.link:hover {
+    color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+}
+
+/* Ensure content does not go under the header */
+body {
+    padding-top: 56px; /* Push down content so it doesn't hide behind the fixed header */
+}
