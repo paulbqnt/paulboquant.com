@@ -1,14 +1,16 @@
 import React from 'react';
 import { RouterProvider, createRouter, createRoute, createRootRoute } from '@tanstack/react-router';
+
 import Layout from './components/Layout';
+import BlogPost from "./components/blog/BlogPost";
+import BlogList from "./components/blog/BlogList";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Uses from "./pages/Uses";
-
-import BlogPost from "./components/blog/BlogPost";
-import BlogList from "./components/blog/BlogList";
-import Projects from "./pages/Projects.tsx";
+import Projects from "./pages/Projects";
+import Project1 from "./pages/projects/Project1";
+import Project2 from "./pages/projects/Project2";
 
 // Root route uses Layout component
 const rootRoute = createRootRoute({
@@ -41,6 +43,20 @@ const projectsRoute = createRoute({
     component: Projects,
 });
 
+const project1Route = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/projects/project1",
+    component: Project1, // You'll need to create this component
+});
+
+const project2Route = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/projects/project2",
+    component: Project2, // You'll need to create this component
+});
+
+
+
 // Add blog list route
 const blogListRoute = createRoute({
     getParentRoute: () => rootRoute,
@@ -56,7 +72,16 @@ const blogPostRoute = createRoute({
 
 // Create router with all routes
 const router = createRouter({
-    routeTree: rootRoute.addChildren([homeRoute, aboutRoute, blogListRoute, blogPostRoute, projectsRoute, usesRoute]),
+    routeTree: rootRoute.addChildren([
+        homeRoute,
+        aboutRoute,
+        blogListRoute,
+        blogPostRoute,
+        projectsRoute,
+        usesRoute,
+        project1Route,
+        project2Route
+    ]),
     defaultPreload: "intent",
     notFoundComponent: () => <div>Custom Not Found Component</div>,
 });
