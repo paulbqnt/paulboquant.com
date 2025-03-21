@@ -4,7 +4,7 @@ import 'katex/dist/katex.min.css';
 import Layout from './components/layouts/Layout.tsx';
 import BlogPost from "./components/blog/BlogPost";
 import BlogList from "./components/blog/BlogList";
-
+import "../src/styles/global.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Uses from "./pages/Uses";

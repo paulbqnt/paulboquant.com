@@ -31,6 +31,35 @@ const darkTheme: MantineThemeOverride = createTheme({
             padding: 0,
         },
     }),
+
+    // Add code highlighting theme customization
+    components: {
+        CodeHighlight: {
+            styles: (theme) => ({
+                root: {
+                    backgroundColor: theme.colors.dark[1],
+                    borderRadius: theme.radius.md,
+                },
+                pre: {
+                    backgroundColor: "transparent !important",
+                },
+                code: {
+                    color: theme.colors.text[0] + " !important",
+                },
+                // Configure specific token types
+                tokens: {
+                    comment: { color: "#7F7F7F" },
+                    string: { color: "#50FA7B" },
+                    keyword: { color: "#FF79C6" },
+                    function: { color: "#8BE9FD" },
+                    number: { color: "#FFB86C" },
+                    variable: { color: "#F1FA8C" },
+                    operator: { color: "#FF79C6" },
+                    punctuation: { color: theme.colors.text[0] },
+                },
+            }),
+        },
+    },
 });
 
 export default darkTheme;

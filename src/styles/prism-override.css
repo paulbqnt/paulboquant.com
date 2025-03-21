@@ -1,0 +1,12 @@
+/* prism-override.css */
+.mantine-CodeHighlight-code .token.comment { color: #7F7F7F !important; }
+.mantine-CodeHighlight-code .token.string { color: #50FA7B !important; }
+.mantine-CodeHighlight-code .token.keyword { color: #FF79C6 !important; }
+.mantine-CodeHighlight-code .token.function { color: #8BE9FD !important; }
+.mantine-CodeHighlight-code .token.number { color: #FFB86C !important; }
+.mantine-CodeHighlight-code .token.operator { color: #FF79C6 !important; }
+.mantine-CodeHighlight-code .token.punctuation { color: #E0E0E0 !important; }
+.mantine-CodeHighlight-code .token.class-name { color: #8BE9FD !important; }
+.mantine-CodeHighlight-code .token.builtin { color: #8BE9FD !important; }
+.mantine-CodeHighlight-code .token.variable { color: #F1FA8C !important; }
+.mantine-CodeHighlight-code .token { color: #E0E0E0 !important; }
