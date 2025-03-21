@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@tanstack/react-router';
-import blogPosts from 'virtual:blog-posts';
+import blogPosts from 'virtual:blog-blog';
 
 const BlogList: React.FC = () => {
     return (
@@ -9,7 +9,7 @@ const BlogList: React.FC = () => {
             <ul>
                 {blogPosts.map((post) => (
                     <li key={post.id}>
-                        <Link to={`/post/${post.id}`}>{post.title}</Link> - {post.date}
+                        <Link to={`/blog/${post.id}`}>{post.title}</Link> - {post.date}
                     </li>
                 ))}
             </ul>

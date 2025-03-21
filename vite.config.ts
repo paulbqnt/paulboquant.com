@@ -9,15 +9,15 @@ export default defineConfig({
     react(),
     mdx(),
     {
-      name: 'virtual-blog-posts',
+      name: 'virtual-blog-blog',
       resolveId(id) {
-        if (id === 'virtual:blog-posts') {
+        if (id === 'virtual:blog-blog') {
           return id;
         }
         return null;
       },
       load(id) {
-        if (id === 'virtual:blog-posts') {
+        if (id === 'virtual:blog-blog') {
           const posts = getAllPostsMetadata();
           return `export default ${JSON.stringify(posts)}`;
         }

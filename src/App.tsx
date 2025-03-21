@@ -87,7 +87,7 @@ const blogListRoute = createRoute({
 
 const blogPostRoute = createRoute({
     getParentRoute: () => rootRoute,
-    path: "/post/$id", // Use $id for TanStack Router dynamic segment
+    path: "/blog/$id", // Use $id for TanStack Router dynamic segment
     component: BlogPost,
 });
 

@@ -4,13 +4,13 @@ import { MDXProvider } from '@mdx-js/react';
 
 const BlogPost: React.FC = () => {
     // Use TanStack Router's useParams
-    const { id } = useParams({ from: '/post/$id' });
+    const { id } = useParams({ from: '/blog/$id' });
     const [Content, setContent] = useState<React.ComponentType | null>(null);
 
     useEffect(() => {
         if (id) {
             console.log("Attempting to load MDX file for ID:", id);
-            import(`../../content/posts/${id}.mdx`)
+            import(`../../content/blog/${id}.mdx`)
                 .then((module) => {
                     console.log("MDX file loaded successfully:", module);
                     setContent(() => module.default);
