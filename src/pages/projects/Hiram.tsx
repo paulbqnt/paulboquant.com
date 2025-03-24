@@ -1,16 +1,12 @@
 // src/pages/About.tsx
 import { Container, Text } from '@mantine/core';
 
-const Project1 = () => {
+const Hiram = () => {
     return (
         <Container>
-
-            <h2>Project1 Page</h2>
-
-
-
+            <h2>Hiram Page</h2>
         </Container>
     );
 };
 
-export default Project1;
+export default Hiram;

@@ -7,12 +7,11 @@ const Projects = () => {
         <Container>
 
             <h2>Projects Page</h2>
+            <h3>Hiram, Option Pricing App</h3>
+            <Link to="/projects/hiram" style={{ textDecoration: 'none' }}>link</Link>
 
-            <h3>Project 1</h3>
-            <Link to="/projects/project1" style={{ textDecoration: 'none' }}>link</Link>
-
-            <h3>Project 2</h3>
-            <Link to="/projects/project2" style={{ textDecoration: 'none' }}>link</Link>
+            <h3>Option Pricing Library (Python)</h3>
+            <Link to="/projects/hiram-pricing" style={{ textDecoration: 'none' }}>link</Link>
 
         </Container>
     );

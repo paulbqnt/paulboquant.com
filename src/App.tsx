@@ -9,8 +9,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Uses from "./pages/Uses";
 import Projects from "./pages/Projects";
-import Project1 from "./pages/projects/Project1";
-import Project2 from "./pages/projects/Project2";
+import Hiram from "./pages/projects/Hiram.tsx";
+import HiramPricing from "./pages/projects/HiramPricing.tsx";
 import Contact from "./pages/Contact.tsx";
 import Learn from "./pages/Learn.tsx";
 import Snippets from "./pages/Snippets.tsx";
@@ -64,16 +64,16 @@ const projectsRoute = createRoute({
     component: Projects,
 });
 
-const project1Route = createRoute({
+const hiramRoute = createRoute({
     getParentRoute: () => rootRoute,
-    path: "/projects/project1",
-    component: Project1, // You'll need to create this component
+    path: "/projects/hiram",
+    component: Hiram, // You'll need to create this component
 });
 
-const project2Route = createRoute({
+const hiramPricingRoute = createRoute({
     getParentRoute: () => rootRoute,
-    path: "/projects/project2",
-    component: Project2, // You'll need to create this component
+    path: "/projects/hiram-pricing",
+    component: HiramPricing, // You'll need to create this component
 });
 
 
@@ -100,8 +100,8 @@ const router = createRouter({
         blogPostRoute,
         projectsRoute,
         usesRoute,
-        project1Route,
-        project2Route,
+        hiramRoute,
+        hiramPricingRoute,
         contactRoute,
         learnRoute,
         snippetsRoute
