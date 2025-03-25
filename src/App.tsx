@@ -14,6 +14,7 @@ import HiramPricing from "./pages/projects/HiramPricing.tsx";
 import Contact from "./pages/Contact.tsx";
 import Learn from "./pages/Learn.tsx";
 import Snippets from "./pages/Snippets.tsx";
+import GoodBooks from "./pages/GoodBooks.tsx";
 
 // Root route uses Layout component
 const rootRoute = createRootRoute({
@@ -55,6 +56,12 @@ const contactRoute = createRoute({
     getParentRoute: () => rootRoute,
     path: "/contact",
     component: Contact,
+});
+
+const goodBooksRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/good-books",
+    component: GoodBooks,
 });
 
 
@@ -104,7 +111,8 @@ const router = createRouter({
         hiramPricingRoute,
         contactRoute,
         learnRoute,
-        snippetsRoute
+        snippetsRoute,
+        goodBooksRoute
     ]),
     defaultPreload: "intent",
     notFoundComponent: () => <div>Custom Not Found Component</div>,
