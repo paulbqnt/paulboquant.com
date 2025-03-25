@@ -15,6 +15,7 @@ import Contact from "./pages/Contact.tsx";
 import Learn from "./pages/Learn.tsx";
 import Snippets from "./pages/Snippets.tsx";
 import GoodBooks from "./pages/GoodBooks.tsx";
+import Now from "./pages/Now.tsx";
 
 // Root route uses Layout component
 const rootRoute = createRootRoute({
@@ -64,6 +65,11 @@ const goodBooksRoute = createRoute({
     component: GoodBooks,
 });
 
+const nowRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: "/now",
+    component: Now,
+});
 
 const projectsRoute = createRoute({
     getParentRoute: () => rootRoute,
@@ -112,7 +118,8 @@ const router = createRouter({
         contactRoute,
         learnRoute,
         snippetsRoute,
-        goodBooksRoute
+        goodBooksRoute,
+        nowRoute
     ]),
     defaultPreload: "intent",
     notFoundComponent: () => <div>Custom Not Found Component</div>,

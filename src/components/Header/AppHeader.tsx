@@ -13,6 +13,7 @@ const AppHeader: React.FC = () => {
                     <Link to="/projects" className={styles.link}>Projects</Link>
                     <Link to="/learn" className={styles.link}>Learn</Link>
                     <Link to="/snippets" className={styles.link}>Snippets</Link>
+                    <Link to="/now" className={styles.link}>Now</Link>
                     <Link to="/contact" className={styles.link}>Contact</Link>
                     <Link to="/about" className={styles.link}>About</Link>
                 </Group>
