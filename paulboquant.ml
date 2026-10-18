@@ -1,1 +1,1 @@
-let () = print_endline "paulboquant is running"
+let () = print_endline "website is running"
