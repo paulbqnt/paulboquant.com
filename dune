@@ -1,1 +1,5 @@
-(executable (name paulboquant))
+(executable
+ (name paulboquant)
+ (modules paulboquant)
+ (libraries dream tyxml caqti caqti-lwt caqti-driver-sqlite3))
+
